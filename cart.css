@@ -109,3 +109,54 @@ main {
     margin-bottom: 0;
   }
 }
+/* Preorder Page Specific Styles */
+.preorder-page .product-day {
+  background-color: #ff9800;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.preorder-page .product-card {
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.preorder-page .product-card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.preorder-page .filter-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.preorder-page .filter-dropdown {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+  min-width: 150px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .preorder-page .product-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .preorder-page .product-name {
+    font-size: 0.9rem;
+  }
+  
+  .preorder-page .product-price {
+    font-size: 0.9rem;
+  }
+}
