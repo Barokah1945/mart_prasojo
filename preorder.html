@@ -1,19 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preorder Produk</title>
-  <link rel="stylesheet" href="cart.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preorder - Warung Prasojo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
-<body>
-  <nav>
-    <a href="index.html" style="background: #ccff33">Katalog Produk</a>
-    <a href="preorder.html" style="background: yellow">Khusus Pre-Order</a>
-  </nav>
-  <main id="preorder-list"></main>
-
-  <script src="preorder.js"></script>
+<body class="preorder-page">
+  <header>
+    <h1>Preorder Warung Prasojo</h1>
+    <div class="cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+    </div>
+  </header>
+  
+  <main>
+    <section class="filter-section">
+      <input type="text" id="search-input" placeholder="Cari produk...">
+      <select id="category-filter">
+        <option value="">Semua Kategori</option>
+      </select>
+      <select id="day-filter">
+        <option value="">Semua Hari</option>
+      </select>
+    </section>
+    
+    <section id="product-container" class="product-container">
+      <!-- Produk akan dimuat di sini -->
+    </section>
+    
+    <aside class="cart-sidebar">
+      <h2><i class="fas fa-shopping-cart"></i> Keranjang</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total">
+        Total: <span id="cart-total">Rp 0</span>
+      </div>
+      <div class="cart-actions">
+        <button id="checkout-btn" class="btn-primary">
+          <i class="fab fa-whatsapp"></i> Pesan via WA
+        </button>
+        <button id="qris-btn" class="btn-secondary">
+          <i class="fas fa-qrcode"></i> Bayar QRIS
+        </button>
+      </div>
+    </aside>
+  </main>
+  
+  <script src="app.js"></script>
 </body>
 </html>
