@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preorder - Warung Prasojo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="cart.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preorder - Warung Prasojo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/preorder.css">
 </head>
-<body class="preorder-page">
-  <header>
-    <h1>Preorder Warung Prasojo</h1>
-    <div class="cart-icon">
-      <i class="fas fa-shopping-cart"></i>
-      <span id="cart-count">0</span>
+<body>
+    <div class="preorder-container">
+        <!-- Header -->
+        <header class="preorder-header">
+            <div class="header-content">
+                <h1><i class="fas fa-store-alt"></i> Preorder Warung Prasojo</h1>
+                <div class="cart-icon" id="cart-toggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Cari produk preorder...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-group">
+                <select id="category-filter" class="filter-select">
+                    <option value="">Semua Kategori</option>
+                </select>
+                <select id="day-filter" class="filter-select">
+                    <option value="">Semua Hari Kirim</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Product Grid -->
+            <div class="product-grid" id="product-container">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Shopping Cart Sidebar -->
+            <div class="cart-sidebar" id="cart-sidebar">
+                <div class="cart-header">
+                    <h3><i class="fas fa-shopping-basket"></i> Keranjang Belanja</h3>
+                    <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="cart-items" id="cart-items">
+                    <!-- Cart items will be loaded here -->
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Total Belanja:</span>
+                        <span id="cart-total">Rp 0</span>
+                    </div>
+                    <div class="cart-actions">
+                        <button class="checkout-btn whatsapp-btn" id="checkout-btn">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                        <button class="checkout-btn qris-btn" id="qris-btn">
+                            <i class="fas fa-qrcode"></i> Bayar dengan QRIS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-  </header>
-  
-  <main>
-    <section class="filter-section">
-      <input type="text" id="search-input" placeholder="Cari produk...">
-      <select id="category-filter">
-        <option value="">Semua Kategori</option>
-      </select>
-      <select id="day-filter">
-        <option value="">Semua Hari</option>
-      </select>
-    </section>
-    
-    <section id="product-container" class="product-container">
-      <!-- Produk akan dimuat di sini -->
-    </section>
-    
-    <aside class="cart-sidebar">
-      <h2><i class="fas fa-shopping-cart"></i> Keranjang</h2>
-      <div id="cart-items"></div>
-      <div class="cart-total">
-        Total: <span id="cart-total">Rp 0</span>
-      </div>
-      <div class="cart-actions">
-        <button id="checkout-btn" class="btn-primary">
-          <i class="fab fa-whatsapp"></i> Pesan via WA
-        </button>
-        <button id="qris-btn" class="btn-secondary">
-          <i class="fas fa-qrcode"></i> Bayar QRIS
-        </button>
-      </div>
-    </aside>
-  </main>
-  
-  <script src="app.js"></script>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
